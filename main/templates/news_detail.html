@@ -9,10 +9,16 @@
     | Views: {{ news.news_views }}</p>
 
 {% if news.thumbnail %}
-<img src="{{ news.thumbnail }}" alt="News thumbnail" width="300">
-<br /><br />
+    <img src="{{ news.thumbnail }}" alt="News thumbnail" width="300">
+    <br /><br />
 {% endif %}
 
 <p>{{ news.content }}</p>
+
+{% if news.user %}
+    <p>Author: {{ news.user.username }}</p>
+{% else %}
+    <p>Author: Anonymous</p>
+{% endif %}
 
 {% endblock content %}
